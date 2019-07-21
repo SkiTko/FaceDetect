@@ -43,6 +43,6 @@ if __name__ == "__main__":
     for f in files:
         print(f)
         image_path = f
-        output_path = "./output_" + os.path.basename(image_path)
+        output_path = "./output/" + os.path.basename(image_path)
 
         face_detect(image_path, output_path)
