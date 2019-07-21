@@ -1,0 +1,27 @@
+real	2m38.341s
+user	19m28.058s
+sys	0m21.019s
+
+real	2m41.311s
+user	19m57.487s
+sys	0m21.942s
+
+real	2m37.043s
+user	19m31.115s
+sys	0m20.831s
+
+
+-----------------------------------------------
+CPU
+
+real	2m41.111s
+user	20m38.764s
+sys	0m16.333s
+
+real	2m49.170s
+user	21m24.764s
+sys	0m16.922s
+
+real	2m44.611s
+user	20m55.595s
+sys	0m16.524s
