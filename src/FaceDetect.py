@@ -6,10 +6,12 @@ import glob
 import cv2
 
 
-opencv_src = '/home/takao/Documents/dev/opencv/opencv'
-cascade_dir = 'data/haarcascades'
-cascade_path = os.path.join(opencv_src, cascade_dir,
-                            'haarcascade_frontalface_default.xml')
+# opencv_src = '/home/takao/Documents/dev/opencv/opencv'
+# cascade_dir = 'data/haarcascades'
+# cascade_path = os.path.join(opencv_src, cascade_dir,
+#                             'haarcascade_frontalface_default.xml')
+cascade_path = os.path.join('/home/takao/Documents/dev/lbpcascade_animeface',
+                            'lbpcascade_animeface.xml')
 
 
 def face_detect(in_file: str, out_file: str):

@@ -20,7 +20,7 @@ source mkvenv.src.sh
 
 必要なパッケージをインストール
 ```
-pip install numpy scipy matplotlib
+pip install numpy scipy matplotlib opencv-python
 ```
 
 OpenCV をビルドしてインストール。
@@ -147,22 +147,3 @@ cmake \
 make -j 12
 make install
 ```
-
-
-
-## 動かし方
-
-1. pyenv 環境をアクティベート
-    ```
-    source mkvenv.src.sh
-    ```
-1. 17flowers/README.md にしたがってデータセットを投入
-1. 実行
-    ```
-    python src/Train.py
-    python src/Predict.py hoge.jpg
-    ```
-
-## 参考資料
-
-* http://aidiary.hatenablog.com/entry/20170131/1485864665
