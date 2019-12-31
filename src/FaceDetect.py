@@ -26,15 +26,18 @@ def face_detect(in_file: str, out_file: str):
 
     # 顔認識
     face_rect = cascade.detectMultiScale(
-        image_gray, scaleFactor=1.1, minNeighbors=2, minSize=(30, 30))
+        image_gray,
+        scaleFactor=1.1,
+        minNeighbors=5,
+        minSize=(24, 24))
 
     # 枠の色(白)
     color = (255, 255, 255)
 
     if len(face_rect) > 0:
         for rect in face_rect:
-            cv2.rectangle(image, tuple(rect[0:2]), tuple(
-                rect[0:2]+rect[2:4]), color, thickness=2)
+            cv2.rectangle(image, tuple(rect[0:2] - 100), tuple(
+                rect[0:2]+(rect[2:4] + 100)), color, thickness=2)
 
         # 認識結果を保存
         cv2.imwrite(out_file, image)
