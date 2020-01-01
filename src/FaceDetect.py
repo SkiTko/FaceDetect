@@ -4,6 +4,7 @@ import sys
 import os
 import glob
 import cv2
+import numpy as np
 
 
 # opencv_src = '/home/takao/Documents/dev/opencv/opencv'
@@ -42,6 +43,10 @@ def face_detect(in_file: str, out_file: str):
             t = max(0, t)
             r = min(image.shape[1], r)
             b = min(image.shape[0], b)
+            # 正方形にする
+            width = min(r-l, b-t)
+            r = l + width
+            b = t + width
             # cv2.rectangle(image,
             #               (l, t),
             #               (r, b),
@@ -54,6 +59,7 @@ def face_detect(in_file: str, out_file: str):
             clopped_out_file = os.path.join(out_dir, str(index) + '_' + out_filetitle + out_fileext)
             clopped = image[t:b, l:r]
             # print(clopped_out_file, clopped.shape, t,b, l,r)
+            clopped = cv2.resize(clopped, (640, 640)) 
             cv2.imwrite(clopped_out_file, clopped)
             index = index + 1
 
