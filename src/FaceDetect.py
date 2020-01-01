@@ -32,7 +32,7 @@ def face_detect(in_file: str, out_file: str):
         minSize=(24, 24))
 
     # 枠の色(白)
-    color = (255, 255, 255)
+    # color = (255, 255, 255)
     index = 1
     if len(face_rect) > 0:
         for rect in face_rect:
@@ -42,17 +42,18 @@ def face_detect(in_file: str, out_file: str):
             t = max(0, t)
             r = min(image.shape[1], r)
             b = min(image.shape[0], b)
-            cv2.rectangle(image,
-                          (l, t),
-                          (r, b),
-                          color,
-                          thickness=2)
+            # cv2.rectangle(image,
+            #               (l, t),
+            #               (r, b),
+            #               color,
+            #               thickness=2)
+
             # Clopping
             out_dir, out_filename = os.path.split(out_file)
             out_filetitle, out_fileext = os.path.splitext(out_filename)
             clopped_out_file = os.path.join(out_dir, str(index) + '_' + out_filetitle + out_fileext)
             clopped = image[t:b, l:r]
-            print(clopped_out_file, clopped.shape, t,b, l,r)
+            # print(clopped_out_file, clopped.shape, t,b, l,r)
             cv2.imwrite(clopped_out_file, clopped)
             index = index + 1
 
